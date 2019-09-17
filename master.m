@@ -52,18 +52,18 @@ for i = 1:m
   [theta] = fmincg(costfunction, initial_theta,options);
   
   %calculates the cost on the training set and adds it to a list
-  [Jtrain,~] = costlog(theta,Xtrain,Ytrain);
+  [Jtrain] = linearRegCost(theta,Xtrain,Ytrain);
   listJ(i,1) = i;
   listJ(i,2) = Jtrain;
   
   %obtains Jcv using earlier found theta
-  [Jval,~] = costlog(theta,Xval,Yval);
+  [Jval] = linearRegCost(theta,Xval,Yval);
   listJ(i,3) = Jval;
 end
 
   figure(2)
   plot(listJ(:,1),listJ(:,2),'b-')
   hold on
-  plot(listJ(:,1),listJ(:,2),'r-')
+  plot(listJ(:,1),listJ(:,3),'r-')
 
 
