@@ -1,5 +1,5 @@
 function [h] = sigmoid2(X1,X2,theta)
-  X = [ones(size(X1,1),1),X1,X2];
+  X = [ones(size(X1,1),1),X];
   
   z = X*theta;
   
